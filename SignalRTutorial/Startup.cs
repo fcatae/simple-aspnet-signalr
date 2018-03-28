@@ -26,6 +26,8 @@ namespace SignalRTutorial
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSignalR();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -62,6 +64,11 @@ namespace SignalRTutorial
 
             app.UseAuthentication();
 
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ChatHub>("/hubs/chat");
+            });
+            
             app.UseMvc();
         }
     }
