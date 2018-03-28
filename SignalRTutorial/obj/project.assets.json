@@ -13120,6 +13120,7 @@
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.2",
+      "Microsoft.Microsoft.AspNetCore.SignalR >= 1.0.0-*",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.3"
     ]
@@ -13177,6 +13178,10 @@
             "target": "Package",
             "version": "[2.0.2, )"
           },
+          "Microsoft.Microsoft.AspNetCore.SignalR": {
+            "target": "Package",
+            "version": "[1.0.0-*, )"
+          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "[2.0.0, )",
@@ -13195,5 +13200,16 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Microsoft.Microsoft.AspNetCore.SignalR. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
+      "libraryId": "Microsoft.Microsoft.AspNetCore.SignalR",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }
